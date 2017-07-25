@@ -4,8 +4,9 @@
 	* GET getCampain
  
 #Import into Eclipse IDE
- 1) Import this project on Eclipse as Gradle project
- 2) Build the project
+ 1)git clone https://github.com/codeonjava/AdCampainsProject.git
+ 2)Import this project on Eclipse as Gradle project
+ 3) Build the project
 		
 		
 #How to Run the application

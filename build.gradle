@@ -1,0 +1,46 @@
+ 
+    apply plugin: 'java'
+    apply plugin: 'eclipse'
+    apply plugin: 'war'
+    apply plugin: 'jetty'
+    
+
+    repositories {
+       mavenCentral()
+    }
+   
+    version = '1.0'
+    
+    
+ dependencies { 
+ 
+ //compile group: 'com.sun.jersey', name: 'jersey-server', version: '1.2' 
+ 
+     compile group: 'commons-collections', name: 'commons-collections', version: '3.2'	
+	//compile group: 'com.fasterxml.jackson.jaxrs', name: 'jackson-jaxrs-json-provider', version: '2.2.3'
+	
+	 providedCompile "javax.servlet:servlet-api:2.5"
+	
+	
+	 compile group: 'org.glassfish.jersey.core', name: 'jersey-server', version: '2.22.1' 
+	 compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-jackson', version: '2.22.1'
+	 compile group: 'org.glassfish.jersey.containers', name: 'jersey-container-servlet-core', version: '2.22.1'
+     compile group: 'org.glassfish.jersey.media', name: 'jersey-media-json-processing', version: '2.22.1'
+   	compile group: 'org.glassfish.jersey.test-framework.providers', name: 'jersey-test-framework-provider-jetty', version: '2.22.1'
+    
+    
+    
+    testCompile "junit:junit:4.12"   
+   
+    compile group: 'org.glassfish.jersey.test-framework.providers', name: 'jersey-test-framework-provider-jetty', version: '2.22.1'
+    
+}
+
+war {
+    from 'src' 
+    classpath fileTree('additionalLibs') 
+    webXml = file('src/main/resources/web.xml') 
+}
+
+//jettyrunwar
+  
